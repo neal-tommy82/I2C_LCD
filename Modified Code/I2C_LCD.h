@@ -1,14 +1,12 @@
 /******************************************************************************
   I2C_LCD.h - I2C_LCD library Version 1.11
   Copyright (C), 2015, Sparking Work Space. All right reserved.
-
  ******************************************************************************
  
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 2.1 of the License, or (at your option) any later version.
-
   This library is build for I2C_LCD12864. Please do not use this library on 
   any other devices, that could cause unpredictable damage to the unknow device.
   See the GNU Lesser General Public License for more details.
@@ -16,13 +14,11 @@
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
 *******************************************************************************/
 
 #ifndef __I2C_LCD_H_
 #define __I2C_LCD_H_
 #define pgm_read_byte_near(_ptr) *(uint8_t*)_ptr
-
 //#include <avr/pgmspace.h>
 
 #include <inttypes.h>
@@ -318,8 +314,6 @@ The default setting is use full API library and 2D Graphic API Library.
 #define	XXXXXXX_	0xfe
 #define	XXXXXXXX	0xff
 
-
-
 typedef struct {
   uint8_t XSize;
   uint8_t YSize;
@@ -328,20 +322,15 @@ typedef struct {
   const unsigned char *pData;
 } GUI_Bitmap_t;
 
-
 /*typedef struct {
   uint8_t YSize;
   uint8_t offset;
 } Font_Info_t;*/
 
-
 #define    ArrowLeft        0x1c
 #define    ArrowRight       0x1d
 #define    ArrowUp          0x1e
 #define    ArrowDown        0x1f
-
-
-
 
 enum LCD_RegAddress
 {
@@ -361,7 +350,6 @@ enum LCD_RegAddress
     WriteRAM_XPosRegAddr=35,
     WriteRAM_YPosRegAddr=36,
     
-
     DrawDotXPosRegAddr=64, 		//14
     DrawDotYPosRegAddr=65,
 
@@ -386,7 +374,6 @@ enum LCD_RegAddress
     DrawBitmapWidthRegAddr=81,
     DrawBitmapHeightRegAddr=82, 	//31
     
-
     DisplayConfigRegAddr=128,		//32
     WorkingModeRegAddr=129,
     BackLightConfigRegAddr=130,
@@ -535,4 +522,3 @@ private:
 extern uint8_t I2C_LCD_ADDRESS;
 
 #endif
-
