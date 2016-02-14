@@ -1,27 +1,23 @@
 /******************************************************************************
   I2C_LCD.cpp - I2C_LCD library Version 1.11
   Copyright (C), 2015, Sparking Work Space. All right reserved.
-
  ******************************************************************************
-
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 2.1 of the License, or (at your option) any later version.
-
   This library is build for I2C_LCD12864. Please do not use this library on
   any other devices, that could cause unpredictable damage to the unknow device.
   See the GNU Lesser General Public License for more details.
-
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
 *******************************************************************************/
 
 #include <Particle.h>
 #include <I2C_LCD.h>
 #include <stdio.h>
+#include <inttypes.h>
 
 /*const Font_Info_t fontInfo[I2C_LCD_NUM_OF_FONT] = 
 {
@@ -34,15 +30,7 @@
     Font_16x32, 16, 32,
 };*/
 
-I2C_LCD::I2C_LCD(void) 
-    { 
-    Wire.begin();
-    }
-
-//void I2C_LCD::Init(void)
-//{
-//    Wire.begin();
-//}
+I2C_LCD::I2C_LCD(void) {}
 
 uint8_t I2C_LCD::ReadByteFromReg(enum LCD_RegAddress regAddr)
 {
@@ -136,7 +124,7 @@ void I2C_LCD::WriteRAMGotoXY(uint8_t x, uint8_t y)
 
 
 
-/*void I2C_LCD::SendBitmapData(const uint8_t *buf, uint8_t length)
+void I2C_LCD::SendBitmapData(const uint8_t *buf, uint8_t length)
 {
     uint8_t i;
     Wire.beginTransmission(I2C_LCD_ADDRESS); // transmit device adress
@@ -146,7 +134,7 @@ void I2C_LCD::WriteRAMGotoXY(uint8_t x, uint8_t y)
         Wire.write(pgm_read_byte_near(buf++)); 
     }
     Wire.endTransmission();    // stop transmitting
-}*/
+}
 
 void I2C_LCD::FontModeConf(enum LCD_FontSort font, enum LCD_FontMode mode, enum LCD_CharMode cMode)
 {
@@ -389,4 +377,3 @@ void I2C_LCD::CleanAll(enum LCD_ColorSort color)
 
 #endif
 #endif
-
