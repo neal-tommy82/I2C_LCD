@@ -1,14 +1,8 @@
 // This #include statement was automatically added by the Particle IDE.
 #include "I2C_LCD.h"
-#define pgm_read_byte_near(_ptr) *(uint8_t*)_ptr
 
 I2C_LCD LCD;
 uint8_t I2C_LCD_ADDRESS = 0x51; //Device address configuration, the default value is 0x51.
-
-
-//For detials of the function useage, please refer to "I2C_LCD User Manual". 
-//You can download the "I2C_LCD User Manual" from I2C_LCD WIKI page: http://www.seeedstudio.com/wiki/I2C_LCD
-
 
 void setup()
 {
@@ -27,5 +21,5 @@ void loop()
     LCD.FontModeConf(Font_6x8, FM_ANL_AAA, BLACK_BAC); 
     LCD.DispStringAt("Hello World!", 0, 10);    //Display "Hello World!" on coordinate of (0, 10).
 
-    //while(1); //Wait for ever. 
+    while(1); //Wait for ever. 
 }
